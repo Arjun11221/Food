@@ -64,7 +64,7 @@ const Body = () => {
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
-    </div>  
+    </div>
   );
 };
 
