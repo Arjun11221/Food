@@ -11,7 +11,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.763089020178832&lng=77.26507069360963&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.763089020178832&lng=77.26507069360963&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     setList(
@@ -34,15 +34,16 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex justify-center gap-16 p-10 ">
+        <div className="flex justify-center gap-7">
           <input
             type="text"
-            className="search-box"
+            className="border border-black rounded-md outline-none w-96 h-11 "
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button
+          <button 
+          className="bg-slate-950 text-yellow-50 p-3 rounded-md"
             onClick={() => {
               const filteredRestaurant = list.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -55,7 +56,7 @@ const Body = () => {
         </div>
 
         <button
-          className="filter-btn"
+          className="bg-slate-950 text-yellow-50 p-3 rounded-md"
           onClick={() => {
             const filteredList = list.filter((res) => res.info.avgRating > 4);
             setFilterList(filteredList);
@@ -65,7 +66,7 @@ const Body = () => {
         </button>
       </div>
       <hr />
-      <div className="res-container">
+      <div className="flex flex-wrap ">
         {filterList.map((restaurant) => (
           <Link
             key={restaurant.info.id}

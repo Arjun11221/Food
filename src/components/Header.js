@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { LOGO } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useStatus";
@@ -13,14 +13,14 @@ const Header = () => {
   // },[]);
 
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO} />
+    <div className="flex h-32 justify-between bg-slate-900 text-white shadow-2xl ">
+      <div className="flex">
+        <img className="w-24 my-5 rounded-lg mx-20" src={LOGO} />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className=" w-6/12 ">
+        <ul className="justify-between my-12 mx-10 font-sans font-semibold text-xl flex gap-5" >
           <li>
-            Online Status : {status ? "Online" : "Offline" }
+            Status : {status ? "Online" : "Offline" }
           </li>
           <li>
             <Link to="/">Home</Link>
@@ -36,7 +36,7 @@ const Header = () => {
           </li>
           <li>Cart</li>
           <button
-            className="login"
+            className="bg-slate-200 p-4 rounded-lg text-black "
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}
