@@ -38,7 +38,8 @@ const Body = () => {
         <div className="flex justify-center gap-7">
           <input
             type="text"
-            className="border border-black rounded-md outline-none w-96 h-11 "
+            placeholder=" Search for restaurant and food"
+            className="border border-black  rounded-md outline-none w-96 h-11 "
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
