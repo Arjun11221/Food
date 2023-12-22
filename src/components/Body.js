@@ -66,8 +66,8 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <hr />
-      <div className="flex flex-wrap ">
+      <hr className="border-black" ></hr>
+      <div className="flex flex-wrap mx-9 my-5 ">
         {filterList.map((restaurant) => (
           <Link
             key={restaurant.info.id}
