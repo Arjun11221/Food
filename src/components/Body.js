@@ -14,13 +14,15 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.763089020178832&lng=77.26507069360963&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log(json);
     setList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilterList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+  
 
   useEffect(() => {
     fetchData();
@@ -29,10 +31,8 @@ const Body = () => {
   const status = useOnlineStatus();
 
   if(status===false) return <h2>Check Your Internet Connection!!</h2>
-
-  return list.length === 0 ? (
-    <Shimmer />
-  ) : (
+  
+  return (list.length===0) ? <Shimmer/> : (
     <div className="body">
       <div className="flex justify-center gap-16 p-10 ">
         <div className="flex justify-center gap-7">
