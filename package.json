@@ -27,7 +27,8 @@
   "scripts": {
     "start": "parcel index.html --port 3000",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "watch-test" : "jest --watchAll"
   },
   "keywords": [],
   "author": "",

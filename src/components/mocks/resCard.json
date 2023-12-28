@@ -1,0 +1,63 @@
+{
+    "info": {
+        "id": "24181",
+        "name": "Domino's Pizza",
+        "cloudinaryImageId": "dftifuiev5dsvklbc72n",
+        "locality": "GTB Nagar",
+        "areaName": "GTB Nagar",
+        "costForTwo": "₹400 for two",
+        "cuisines": [
+            "Pizzas",
+            "Italian",
+            "Pastas",
+            "Desserts"
+        ],
+        "avgRating": 4.2,
+        "parentId": "2456",
+        "avgRatingString": "4.2",
+        "totalRatingsString": "10K+",
+        "sla": {
+            "deliveryTime": 49,
+            "lastMileTravel": 11.7,
+            "serviceability": "SERVICEABLE",
+            "slaString": "49 mins",
+            "lastMileTravelString": "11.7 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2023-12-29 02:59:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "₹150 OFF",
+            "subHeader": "ABOVE ₹299",
+            "discountTag": "FLAT DEAL"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {},
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/dominos-pizza-gtb-nagar-delhi-24181",
+        "type": "WEBLINK"
+    }
+}

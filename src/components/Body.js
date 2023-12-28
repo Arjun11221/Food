@@ -14,7 +14,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.763089020178832&lng=77.26507069360963&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     setList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -22,7 +22,6 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-  
 
   useEffect(() => {
     fetchData();
@@ -30,9 +29,11 @@ const Body = () => {
 
   const status = useOnlineStatus();
 
-  if(status===false) return <h2>Check Your Internet Connection!!</h2>
-  
-  return (list.length===0) ? <Shimmer/> : (
+  if (status === false) return <h2>Check Your Internet Connection!!</h2>;
+
+  return list.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="flex justify-center gap-16 p-10 ">
         <div className="flex justify-center gap-7">
@@ -43,8 +44,8 @@ const Body = () => {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button 
-          className="bg-slate-950 text-yellow-50 p-3 rounded-md"
+          <button
+            className="bg-slate-950 text-yellow-50 p-3 rounded-md"
             onClick={() => {
               const filteredRestaurant = list.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -57,6 +58,7 @@ const Body = () => {
         </div>
 
         <button
+          data-testid="filter"
           className="bg-slate-950 text-yellow-50 p-3 rounded-md"
           onClick={() => {
             const filteredList = list.filter((res) => res.info.avgRating > 4);
@@ -66,7 +68,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <hr className="border-black" ></hr>
+      <hr className="border-black"></hr>
       <div className="flex flex-wrap mx-9 my-5 ">
         {filterList.map((restaurant) => (
           <Link
