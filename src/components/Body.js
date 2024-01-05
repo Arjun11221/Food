@@ -16,10 +16,10 @@ const Body = () => {
     const json = await data.json();
     // console.log(json);
     setList(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilterList(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -31,7 +31,7 @@ const Body = () => {
 
   if (status === false) return <h2>Check Your Internet Connection!!</h2>;
 
-  return list.length === 0 ? (
+  return list.length == 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
