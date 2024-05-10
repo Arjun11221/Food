@@ -31,7 +31,7 @@ const Body = () => {
 
   if (status === false) return <h2>Check Your Internet Connection!!</h2>;
 
-  return list.length == 0 ? (
+  return list?.length == 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -70,7 +70,7 @@ const Body = () => {
       </div>
       <hr className="border-black"></hr>
       <div className="flex flex-wrap mx-9 my-5 ">
-        {filterList.map((restaurant) => (
+        {filterList?.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}
